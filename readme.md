@@ -1,7 +1,7 @@
 ### Clip Present ###
 
 ```
-git clone https://github.com/Tuchsanai/devpot_week9.git
+https://drive.google.com/file/d/1VPrHGUxmRuWvHc_hQ6RzcPUODVWc9pAq/view?usp=sharing
 ```
 
 ### Backend ###
