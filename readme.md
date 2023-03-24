@@ -1,8 +1,6 @@
 ### Clip Present ###
 
-```
 https://drive.google.com/file/d/1VPrHGUxmRuWvHc_hQ6RzcPUODVWc9pAq/view?usp=sharing
-```
 
 ### Backend ###
 
