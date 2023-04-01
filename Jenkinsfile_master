@@ -29,5 +29,11 @@ pipeline {
                     }
                 }
             }
+            
+            stage('Tigger to slave job'){
+                steps {
+                    build job: 'Slave'
+                }
+            }
         }
 }
