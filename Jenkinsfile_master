@@ -16,7 +16,7 @@ pipeline {
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
-                        sh "docker-compose build"
+                        sh "docker-compose build ."
                     }
                 }
             }
@@ -25,15 +25,8 @@ pipeline {
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
-                        sh 'docker push chaikub/my-backend_image:1.0 .'
-                        sh 'docker push chaikub/my-frontend_image:1.0 .'
+                        sh 'docker login'
                     }
-                }
-            }
-
-            stage('Tigger to slave job'){
-                steps {
-                    build job: 'Slave'
                 }
             }
         }
