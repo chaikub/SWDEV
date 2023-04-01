@@ -33,7 +33,7 @@ pipeline {
 
             stages('Tigger to slave job'){
                 steps {
-                    build job: 'slave-job'
+                    build job: 'Slave'
                 }
             }
         }
