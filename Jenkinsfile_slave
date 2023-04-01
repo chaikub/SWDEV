@@ -36,7 +36,7 @@ pipeline {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
                         sh "docker run -d -p 8081:80 --name backend_server  my-backend_image:1.0"
-                        sh "docker run -d -p 8082:80 --name frontend_server my-frontend-image:1.0"
+                        sh "docker run -d -p 8082:80 --name frontend_server my-frontend_image:1.0"
                     }
                 }
             }
