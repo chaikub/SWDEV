@@ -16,7 +16,7 @@ pipeline {
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
-                        sh "docker-compose build ."
+                        sh "docker-compose build"
                     }
                 }
             }
