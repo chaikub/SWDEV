@@ -12,7 +12,6 @@ https://
 
 ```
 nano install_git_docker_dockercompose.sh
-
 ```
 
 ### 2. Add the following content to install_git_docker_docker_compose.sh :
@@ -58,7 +57,6 @@ Ctrl+X, then Y, then Enter.
 ## 4. Open the install_Jenkins.sh file :
 ```
 nano install_Jenkins.sh
-
 ```
 
 ### 5. Add the following content to install_Jenkins.sh :
@@ -87,7 +85,6 @@ sudo systemctl enable jenkins
 # Print the initial admin password
 echo "Initial Jenkins admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-
 ```
 
 ## 6.Save and close the file.
@@ -106,12 +103,10 @@ chmod +x install_git_docker_dockercompose.sh
 ## 8 .Run the install.sh script:
 ```
 ./install_git_docker_dockercompose.sh
-
 ```
 
 ```
 ./install_Jenkins.sh
-
 ```
 
 ## 9.Adds the user "jenkins" to the "docker" group, which allows the user to run Docker #commands without needing to use sudo.
@@ -138,5 +133,4 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ```
 sudo chmod 666 /var/run/docker.sock 
-
 ```
