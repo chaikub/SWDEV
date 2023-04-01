@@ -12,7 +12,7 @@ pipeline {
                 }
             }
 
-            stages('Build Stage'){
+            stage('Build Stage'){
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
@@ -21,7 +21,7 @@ pipeline {
                 }
             }
 
-            stages('Push Stage'){
+            stage('Push Stage'){
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
@@ -31,7 +31,7 @@ pipeline {
                 }
             }
 
-            stages('Tigger to slave job'){
+            stage('Tigger to slave job'){
                 steps {
                     build job: 'Slave'
                 }
