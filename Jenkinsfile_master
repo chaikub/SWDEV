@@ -21,19 +21,12 @@ pipeline {
                 }
             }
 
-            stage('Push Stage'){
+            stage('log image'){
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
-                        sh 'docker push chaikub/my-backend_image:1.0 .'
-                        sh 'docker push chaikub/my-frontend_image:1.0 .'
+                        sh 'docker images'
                     }
-                }
-            }
-
-            stage('Tigger to slave job'){
-                steps {
-                    build job: 'Slave'
                 }
             }
         }
