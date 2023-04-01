@@ -18,7 +18,6 @@ nano install_git_docker_dockercompose.sh
 ### 2. Add the following content to install_git_docker_docker_compose.sh :
 
 ```
-
 #!/bin/bash
 
 # Update the package index and install required dependencies
@@ -49,27 +48,18 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Print Docker and Docker Compose versions
 docker --version
 docker-compose --version
-
-
-
 ```
-
-
 
 ## 3.Save and close the file.
 ```
 Ctrl+X, then Y, then Enter.
 ```
 
-
-
 ## 4. Open the install_Jenkins.sh file :
-
 ```
 nano install_Jenkins.sh
 
 ```
-
 
 ### 5. Add the following content to install_Jenkins.sh :
 ```
@@ -100,33 +90,24 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ```
 
-
-
 ## 6.Save and close the file.
 ```
 Ctrl+X, then Y, then Enter.
 ```
 
-
- 
 ## 7. Make the install.sh script executable:
 ```
 chmod +x install_Jenkins.sh
 ```
-
 ```
 chmod +x install_git_docker_dockercompose.sh
 ```
 
-
-
 ## 8 .Run the install.sh script:
-
 ```
 ./install_git_docker_dockercompose.sh
 
 ```
-
 
 ```
 ./install_Jenkins.sh
@@ -134,31 +115,24 @@ chmod +x install_git_docker_dockercompose.sh
 ```
 
 ## 9.Adds the user "jenkins" to the "docker" group, which allows the user to run Docker #commands without needing to use sudo.
- 
  ```
 sudo usermod -aG docker $USER
 sudo groupadd docker
 ```
-
  ```
 sudo usermod -aG docker jenkins
 sudo groupadd jenkins
 ```
 
-
-
 ## 10. Access Jenkins by opening a web browser and navigating to
-
 ```
 http://<your_instance_ip>:8080
 ```
 
 ## 11. Initial Jenkins admin password:"
-
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
-
 
 ## 12. Run the following command to install the Docker plugin:
 
