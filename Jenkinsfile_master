@@ -24,7 +24,7 @@ pipeline {
             stage('Push Stage'){
                 steps {
                     dir('SWDEV') {
-                        withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                             sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                         }
                         sh 'docker push chaikub/my-backend_image:1.0 .'
