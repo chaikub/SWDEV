@@ -1,3 +1,4 @@
+version: '3'
 
 services:
   backend:
@@ -5,7 +6,6 @@ services:
       context: ./Back-End
       dockerfile: Dockerfile
       image: my-backend_image:1.0
-
   frontend:
     build:
       context: ./Front-End
