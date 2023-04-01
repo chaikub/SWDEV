@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: ./Back-End
+      dockerfile: Dockerfile
+      image: my-backend_image
+  frontend:
+    build:
+      context: ./Front-End
+      dockerfile: Dockerfile
+      image: my-frontend_image

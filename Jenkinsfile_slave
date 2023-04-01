@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+        
+        stages {
+            stage('Initialize Stage') {
+                steps {
+                    echo 'Initial : Delete containers and images'
+                    sh 'docker stop ${DOCKER_CONTAINER_NAME} || true'
+                    sh 'docker rm ${DOCKER_CONTAINER_NAME} || true'
+                    sh 'docker rmi ${DOCKER_IMAGE_NAME} || true'
+                }
+            }
+
+            stage('Pull Stage') {
+            steps {
+                dir('SWDEV') {
+                    echo "Current path is ${pwd()}"
+                    sh "docker pull chaikub/my-backend_image"
+                    sh "docker pull chaikub/my-frontend_image"
+                }
+            }
+
+            stage('Run Stage') {
+            steps {
+                dir('SWDEV') {
+                    echo "Current path is ${pwd()}"
+                    sh "docker run -d -p 8088:80 --name backend_server  my-backend_image"
+                    sh "docker run -d -p 8080:80 --name frontend_server my-frontend-image"
+                }
+            }
+
+        }
+            
+        }
+}

@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+        
+        stages {
+            stage('Initialize Stage') {
+                steps {
+                    echo 'Initial : Delete containers and images'
+                     dir('SWDEV') {
+                        echo "Current path is  ${pwd()}"
+                        sh 'docker-compose down --rmi all --volumes || true'
+                     }
+                }
+            }
+
+            stages('Build Stage'){
+                steps {
+                    dir('SWDEV') {
+                        echo "Current path is ${pwd()}"
+                        sh "docker-compose build -d"
+                    }
+                }
+            }
+
+            stages('Push Stage'){
+                steps {
+                    dir('SWDEV') {
+                        echo "Current path is ${pwd()}"
+                        sh 'docker push chaikub/my-backend_image .'
+                        sh 'docker push chaikub/my-frontend_image .'
+                    }
+                }
+            }
+
+            stages('Tigger to slave job'){
+                steps {
+                    build job: 'slave-job'
+                }
+            }
+        }
+}
