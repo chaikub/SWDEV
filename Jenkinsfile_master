@@ -25,8 +25,8 @@ pipeline {
                 steps {
                     dir('SWDEV') {
                         echo "Current path is ${pwd()}"
-                        sh 'docker push chaikub/my-backend_image .'
-                        sh 'docker push chaikub/my-frontend_image .'
+                        sh 'docker push chaikub/my-backend_image:1.0 .'
+                        sh 'docker push chaikub/my-frontend_image:1.0 .'
                     }
                 }
             }
