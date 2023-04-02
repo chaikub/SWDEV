@@ -4,7 +4,7 @@ https://drive.google.com/file/d/1MRq4BrE1Kf0yQGTY8-agBEfjzbpI3UgS/view?usp=share
 
 ### Clip Present Week10 ###
 
-https://drive.google.com/file/d/1RTLMQl_O28BY7sW_p2TQBKKkkUE_FdqB/view?usp=share_link
+
 
 # Install jenkins, docker, docker-compose, and git 
 
