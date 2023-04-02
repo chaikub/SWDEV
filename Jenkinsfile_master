@@ -24,8 +24,9 @@ pipeline {
             stage('Push Stage'){
                 steps {
                     dir('SWDEV') {
-                        sh 'docker push chaikub/my-backend_image:1.0'
-                        sh 'docker push chaikub/my-frontend_image:1.0'
+                        sh 'docker login'
+                        //sh 'docker push chaikub/my-backend_image:1.0'
+                        //sh 'docker push chaikub/my-frontend_image:1.0'
                     }
                 }
             }
