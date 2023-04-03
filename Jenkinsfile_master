@@ -33,7 +33,7 @@ pipeline {
                 }
             }
             
-            stage('Tigger to slave job'){
+            stage('Trigger to slave job'){
                 steps {
                     build job: 'Slave'
                 }
